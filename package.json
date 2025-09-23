@@ -1,0 +1,17 @@
+{
+  "name": "cs2-obs-router",
+  "version": "1.0.0",
+  "description": "CS2 GSI → OBS Router: переключает POV-источники в OBS по SteamID активного игрока",
+  "type": "module",
+  "scripts": {
+    "start": "cross-env OBS_PASS=superpass node server.mjs"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "obs-websocket-js": "^5.0.3"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  },
+  "license": "MIT"
+}
