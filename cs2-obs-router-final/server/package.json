@@ -1,0 +1,13 @@
+{
+  "name": "cs2-obs-router-server",
+  "version": "1.4.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server_obs.mjs"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "obs-websocket-js": "^5.0.4",
+    "ws": "^8.18.0"
+  }
+}
