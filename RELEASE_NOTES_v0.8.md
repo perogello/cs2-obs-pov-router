@@ -1,43 +1,44 @@
 # v0.8.0 Release Notes
 
-## RU
+## Русский
 
 ### Главное
 
-- Полностью переписана серверная логика роутинга CS2 -> OBS.
-- Известный игрок показывает привязанный OBS source.
-- Неизвестный игрок скрывает все POV sources.
-- Freecam/no player скрывает все POV sources.
-- Переключение работает через `SetSceneItemEnabled` без opacity/filter/transform.
+- Полностью переписана серверная логика маршрутизации CS2 в OBS.
+- Известный игрок показывает привязанный OBS-источник.
+- Неизвестный игрок скрывает все POV-источники.
+- Свободная камера или отсутствие активного игрока скрывает все POV-источники.
+- Переключение работает только через `SetSceneItemEnabled`.
+- Положение, размер, opacity, фильтры и transform источников не меняются.
 
 ### OBS
 
-- Источники в OBS больше не завязаны на названия.
-- Mapping хранит стабильный scene item key вида `POV_ROUTER:1`.
-- Сервер умеет заново спросить OBS WebSocket password при ошибке авторизации без перезапуска `.bat`.
-- Добавлена последовательная обработка маршрутов, чтобы старые hide/show команды не ломали новое состояние.
+- Источники OBS больше не завязаны на фиксированные названия.
+- Привязка хранит стабильный ключ элемента сцены, например `POV_ROUTER:1`.
+- Сервер заново спрашивает пароль OBS WebSocket при ошибке авторизации без перезапуска `.bat`.
+- Применение маршрута выполняется последовательно, чтобы старые команды скрытия или показа не перетирали новое состояние.
 
 ### Игроки И База
 
-- Добавлена база сохранённых игроков.
+- Добавлена база сохраненных игроков.
 - Добавлен импорт игроков из `.json`, `.csv`, `.xlsx`.
 - Добавлен экспорт базы игроков в JSON.
-- В UI сохранённые и live-игроки визуально разделены.
+- В интерфейсе сохраненные игроки и live-игроки визуально разделены.
 - Добавлено редактирование и удаление игроков из базы.
 
 ### GSI
 
 - Добавлен `install_gsi_config.bat`.
-- Установщик сам ищет папку CS2 через стандартные пути Steam и `libraryfolders.vdf`.
-- Если CS2 не найден, можно вручную указать путь к `game\csgo\cfg`.
-- GSI config обновлён под низкую задержку: `heartbeat 0.1`, `buffer 0.0`, `throttle 0.0`.
+- Установщик сам ищет CS2 через стандартные пути Steam и `libraryfolders.vdf`.
+- Если CS2 не найдена, можно вручную указать путь к `game\csgo\cfg`.
+- GSI-конфиг настроен на низкую задержку: `heartbeat 0.1`, `buffer 0.0`, `throttle 0.0`.
 
-### UI
+### Интерфейс
 
-- Добавлена ручная привязка SteamID к OBS source.
-- Добавлен Edit для текущих привязок.
-- Добавлен Force для проверки источника.
-- Добавлен Import/Export в Player database.
+- Добавлена ручная привязка SteamID к OBS-источнику.
+- Добавлено редактирование текущих привязок.
+- Добавлена кнопка принудительного показа источника для проверки.
+- Добавлен импорт и экспорт в базе игроков.
 
 ### Проверки
 
@@ -45,29 +46,31 @@
 - `npm.cmd --prefix client run build`
 - Проверен запуск сервера.
 - Проверено подключение к OBS WebSocket.
-- Проверено чтение OBS sources.
-- Проверены GSI-сценарии mapped player и freecam.
+- Проверено чтение источников OBS.
+- Проверены GSI-сценарии для привязанного игрока и свободной камеры.
+- Проверен `npm audit`: уязвимостей не найдено.
 
-## EN
+## English
 
 ### Main
 
-- Fully rewrote the CS2 -> OBS server routing logic.
+- Fully rewrote the CS2 to OBS server routing logic.
 - Known player shows the mapped OBS source.
 - Unknown player hides all POV sources.
-- Freecam/no player hides all POV sources.
-- Switching uses `SetSceneItemEnabled` only, with no opacity/filter/transform behavior.
+- Freecam or no active player hides all POV sources.
+- Switching uses only `SetSceneItemEnabled`.
+- Source position, size, opacity, filters, and transform are not changed.
 
 ### OBS
 
 - OBS sources are no longer tied to fixed names.
-- Mapping stores stable scene item keys such as `POV_ROUTER:1`.
+- Mapping stores a stable scene item key, for example `POV_ROUTER:1`.
 - The server asks for the OBS WebSocket password again after authentication failure without restarting the `.bat` file.
-- Route application is serialized to prevent stale hide/show commands from overriding the latest state.
+- Route application is serialized so stale hide or show commands cannot override the latest state.
 
 ### Players And Database
 
-- Added saved player database.
+- Added a saved player database.
 - Added player import from `.json`, `.csv`, `.xlsx`.
 - Added JSON export for the player database.
 - Saved and live players are visually separated in the UI.
@@ -83,9 +86,9 @@
 ### UI
 
 - Added manual SteamID to OBS source binding.
-- Added Edit for existing mappings.
-- Added Force for source testing.
-- Added Import/Export in Player database.
+- Added editing for existing mappings.
+- Added a force-show button for source testing.
+- Added player database import and export.
 
 ### Validation
 
@@ -95,3 +98,4 @@
 - OBS WebSocket connection tested.
 - OBS source listing tested.
 - GSI mapped player and freecam scenarios tested.
+- `npm audit` tested: no vulnerabilities found.
