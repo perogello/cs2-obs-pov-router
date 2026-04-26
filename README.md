@@ -59,6 +59,8 @@ install_gsi_config.bat
 
 Рекомендуемый GSI-конфиг:
 
+Это минимальный конфиг для роутинга камер. `provider` нужен, чтобы сервер не добавлял SteamID наблюдателя в список игроков. `player_id` нужен для активного игрока, `allplayers_id` нужен для live-списка игроков.
+
 ```ini
 "OBS Router"
 {
@@ -71,20 +73,8 @@ install_gsi_config.bat
   "data"
   {
     "provider" "1"
-    "map" "1"
-    "round" "1"
     "player_id" "1"
-    "player_state" "1"
-    "player_position" "1"
-    "player_weapons" "1"
-    "player_match_stats" "1"
     "allplayers_id" "1"
-    "allplayers_state" "1"
-    "allplayers_position" "1"
-    "allplayers_weapons" "1"
-    "allplayers_match_stats" "1"
-    "phase_countdowns" "1"
-    "bomb" "1"
   }
 }
 ```
@@ -231,6 +221,8 @@ After installing or changing the GSI config, fully restart CS2.
 
 Recommended GSI config:
 
+This is the minimal config for camera routing. `provider` is required so the server can avoid adding the observer's SteamID to the player list. `player_id` is required for the active player, and `allplayers_id` is required for the live player list.
+
 ```ini
 "OBS Router"
 {
@@ -243,20 +235,8 @@ Recommended GSI config:
   "data"
   {
     "provider" "1"
-    "map" "1"
-    "round" "1"
     "player_id" "1"
-    "player_state" "1"
-    "player_position" "1"
-    "player_weapons" "1"
-    "player_match_stats" "1"
     "allplayers_id" "1"
-    "allplayers_state" "1"
-    "allplayers_position" "1"
-    "allplayers_weapons" "1"
-    "allplayers_match_stats" "1"
-    "phase_countdowns" "1"
-    "bomb" "1"
   }
 }
 ```

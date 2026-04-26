@@ -31,6 +31,7 @@
 - Добавлен `install_gsi_config.bat`.
 - Установщик сам ищет CS2 через стандартные пути Steam и `libraryfolders.vdf`.
 - Если CS2 не найдена, можно вручную указать путь к `game\csgo\cfg`.
+- GSI-конфиг сокращен до минимального набора данных: `provider`, `player_id`, `allplayers_id`.
 - GSI-конфиг настроен на низкую задержку: `heartbeat 0.1`, `buffer 0.0`, `throttle 0.0`.
 
 ### Интерфейс
@@ -81,6 +82,7 @@
 - Added `install_gsi_config.bat`.
 - The installer detects CS2 through common Steam paths and `libraryfolders.vdf`.
 - If CS2 is not found, the installer asks for the `game\csgo\cfg` path manually.
+- GSI config is reduced to the minimal data set: `provider`, `player_id`, `allplayers_id`.
 - GSI config is tuned for low latency: `heartbeat 0.1`, `buffer 0.0`, `throttle 0.0`.
 
 ### UI

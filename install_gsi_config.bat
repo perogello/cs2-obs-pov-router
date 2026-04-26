@@ -50,20 +50,8 @@ set "CFG_FILE=%CFG_DIR%\%CFG_FILE_NAME%"
   echo   "data"
   echo   {
   echo     "provider" "1"
-  echo     "map" "1"
-  echo     "round" "1"
   echo     "player_id" "1"
-  echo     "player_state" "1"
-  echo     "player_position" "1"
-  echo     "player_weapons" "1"
-  echo     "player_match_stats" "1"
   echo     "allplayers_id" "1"
-  echo     "allplayers_state" "1"
-  echo     "allplayers_position" "1"
-  echo     "allplayers_weapons" "1"
-  echo     "allplayers_match_stats" "1"
-  echo     "phase_countdowns" "1"
-  echo     "bomb" "1"
   echo   }
   echo }
 )
